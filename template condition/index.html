@@ -1,0 +1,41 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="app">
+            <!-- v-if -> 주석, v-show -> display: none 차이 -->
+            <div v-if="ok">v-if 조건으로 출력하기</div>
+            <div v-show="ok">v-show 조건을 출력하기</div>
+            <!-- v-show 불가능 -->
+            <template v-if="ok">
+                <header>타이틀</header>
+                <div>
+                    콘텐츠
+                </div>
+            </template>
+            <!-- v-if v-else-if v-else -->
+            <div v-if="type ==='A'">
+                type는 A
+            </div>
+            <div v-else-if="type ==='B'">
+                type는 B
+            </div>
+            <div v-else>
+                모든 조건을 만족하지 않는 경우
+            </div>
+            <!-- v-if 가 말을 안 들을 때 -->
+            <div v-if="loaded" key="content-visible">
+                cotent
+            </div>
+            <div v-else key="content-loading">
+                loading now...
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

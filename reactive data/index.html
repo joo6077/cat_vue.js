@@ -1,0 +1,57 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="app">
+            <!-- {{mustache는 텍스트만!}} -->
+            <!-- 객체와 내부 배열 요소 출력({{데이터에 저장된 값을 다 사용 가능}}) -->
+            <p>Hello {{message}}</p>
+            <p>{{message.value}}</p>
+            <p>{{message.value.length}}</p>
+            <p>{{list[2]}}</p>
+            <p>{{list[num]}}</p>
+            <!--  -->
+            <p>{{1+1}}</p>
+            <!-- <p>{{var foo = message}}</p> -->
+            <p>{{message.length >= 10 ? '10글자 이상' : '10글자 이하'}}</p>
+            <p>{{Math.round(3.14)}}</p>
+
+            <!-- 속성은 v-bind로! -->
+            <input type="text" v-bind:value="message.value">
+            
+            <!-- v-bind 장식자 DOM 속성 바인드! -->
+            <div v-bind:text-context="text">...</div>
+            <div v-bind:scroll-top="scroll">...</div>
+
+            <pre>{{$data}}</pre>
+
+            <!-- 클릭으로 카운터 수 늘리기 -->
+            <p>{{count}}번 클릭했습니다.</p>
+            <button v-on:click="increment">카운트 하기</button>
+
+            <!-- 스타일 바인딩! -->
+            <p v-bind:class="{ child:isChild, 'is-active':isActive }">Text</p>
+            <p v-bind:style="{ color:textColor, backgroundColor:bgColor }">Text</p>
+            
+            <!-- 플레인 효과+바인딩 -->
+            <p class="child" v-bind:class="{ 'is-active':isActive }">Text</p>
+            <p style="color:blue" v-bind:style="{color:textColor}">Text</p>
+            <!-- 삼항 연산자 두 개 이상의 연산일 때 -->
+            <p v-bind:class="[isActive ? 'active' : 'normal', otherClass]">Text</p>
+            <!-- 객체 데이터 전달 -->
+            <p v-bind:class="classObject">Text</p>
+            <p v-bind:style="styleObject">Text</p>
+            <!-- svg -->
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <circle cx="100" cy="75" v-bind:r="radius" fill="lightpink"/>
+            </svg>
+            <input type="range" min="0" max="100" v-model="radius">
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

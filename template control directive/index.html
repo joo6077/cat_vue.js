@@ -1,0 +1,23 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <!-- 컴파일 된 이후에 인스턴스 생성 이 후 -->
+        <div id="app" v-cloak>
+            <!-- Vue 컴파일 X -->
+            <a v-bind:href="url" v-pre> Hello {{message}}</a>
+            <!-- 한번만 컴파일 -->
+            <a v-bind:href="url" v-once> Hello {{message}}</a>
+            <!-- Mustache 대신 v-text -->
+            <span v-text="message"></span>
+            <!-- html 렌더링 -->
+            <span v-html="message1"></span>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+        <div id="app">
+            <header :class="{compact:scrollY > 200}">
+                200px이상 스크롤했으면, .compact 클래스 추가하기
+            </header>
+            <pre>다시 if문을 살펴보겠습니다. if 조건이 참이 아닌 경우 코드를 수행하도록 하려면 else문을 추가합니다.
+                var age = 28;
+                if (age > 16) {
+                    println('Yay, you can drive!');
+                } else {
+                    println('Sorry, but you have ' + (16 - age) + ' years until you can drive.');
+                }
+                종종 여러 조건을 확인하고 조건에 따라 서로 다른 것을 수행해야 하는 경우 else if를 이용합니다.
+                var age = 20;
+                if (age >= 35) {
+                    println('You can vote AND hold any place in government!');
+                } else if (age >= 30) {
+                    println('You can vote AND run for the Senate!');
+                } else if (age >= 18) {
+                    println('You can vote!');
+                } else {다시 if문을 살펴보겠습니다. if 조건이 참이 아닌 경우 코드를 수행하도록 하려면 else문을 추가합니다.
+                    var age = 28;
+                    if (age > 16) {
+                        println('Yay, you can drive!');
+                    } else {
+                        println('Sorry, but you have ' + (16 - age) + ' years until you can drive.');
+                    }
+                    종종 여러 조건을 확인하고 조건에 따라 서로 다른 것을 수행해야 하는 경우 else if를 이용합니다.
+                    var age = 20;
+                    if (age >= 35) {
+                        println('You can vote AND hold any place in government!');
+                    } else if (age >= 30) {
+                        println('You can vote AND run for the Senate!');
+                    } else if (age >= 18) {
+                        println('You can vote!');
+                    } else {
+                    </pre>
+                    <div class="content"></div>
+                    <div @click="scrollTop">페이지 상단으로 이동하기</div>
+                    
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+                <script src="main.js"></script>
+    </body>
+</html>

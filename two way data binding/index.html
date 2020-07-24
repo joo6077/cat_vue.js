@@ -1,0 +1,55 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="app">
+            <input v-model="message">
+            <p>{{message}}</p>
+            <!-- textarea String -->
+            <textarea v-model="message1"></textarea>
+            <p>{{message1}}</p>
+            <!-- checkbox -->
+            <label>
+                <input type="checkbox" true-value="yes" false-value="no" v-model="val">{{val}}
+            </label>
+            <!-- checkbox multiple list -->
+            <label><input type="checkbox" v-model="val1" value="A">A</label>
+            <label><input type="checkbox" v-model="val1" value="B">B</label>
+            <label><input type="checkbox" v-model="val1" value="C">C</label>
+            <p>{{val1}}</p>
+            <!-- radio String -->
+            <label><input type="radio" v-model="val2" value="A">A</label>
+            <label><input type="radio" v-model="val2" value="B">B</label>
+            <label><input type="radio" v-model="val2" value="C">C</label>
+            <p>{{val2}}</p>
+            <!-- select one String -->
+            <select v-model="val3">
+                <option disabled>선택해주세요</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+            </select>
+            <p>{{val3}}</p>
+            <!-- select multiple list -->
+            <select v-model="val4" multiple>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+            </select>
+            <p>{{val4}}</p>
+            <!-- file은 change이용 -->
+            <input type="file" @change="handleChange" multiple>
+            <div v-if="preview"><img :src="preview"></div>
+            <!-- range -->
+            <input type="range" v-model.number="val5">{{val5}}
+            <!-- 장식자 -->
+            <input type="text" v-model.number="price">{{price}}
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

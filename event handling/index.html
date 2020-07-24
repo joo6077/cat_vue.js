@@ -1,0 +1,76 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="app">
+            <button v-on:click="handleClick">클릭</button>
+            <button @click="handleClick">클릭</button>
+            <!-- 인라인 메서드 핸들링 -->
+            <button @click="count++">클릭</button>
+            <p>{{count}}</p>
+            <!-- $event event 객체 -->
+            <button v-on:click="handleClickEvent($event, 'item')">클릭</button>
+            <!-- 사용할 수 있는 이벤트들 -->
+            <img src="me2.png" v-on:load="show=true" v-bind:class="{hide:!show}">
+            <div @scroll="handler">
+                콘텐츠
+            </div>
+            <div @mousewheel="handler">
+                콘텐츠
+            </div>
+            <div @dragstart="handler" draggable>
+                드래그 가능
+            </div>
+            <!-- 바로 입력양식 -->
+            <input v-bind:value="message" @input="handleInput">
+            <!-- 이벤트 장식자 -->
+            <!-- 마우스 우클릭 -->
+            <div @click.right="handler">example</div>
+            <div @click.right.prevent="handler">example</div>
+            <!-- 이벤트 버블링 막음 -->
+            <div @click="handler('div1')">
+                div1
+                <a href="#top" @click.stop="handler('div2')">div2</a>
+            </div>
+            <!-- prevent submit 막음 -->
+            <div @click="handler('div1')">
+                div1
+                <a href="#top" @click.prevent="handler('div2')">div2</a>
+            </div>
+            <!-- capture 이벤트가 캡쳐 먼저 실행 -->
+            <div @click="handler('div1')">
+                div1
+                <div @click.capture="handler('div2')">
+                    div2
+                    <div @click="handler('div3')">
+                        div3
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- self 이벤트 주체가 자기 자신일 때만-->
+            <div @click.self="handler('div1')">
+                div1
+                <div @click="handler('div2')">
+                    div2
+                    <div @click="handler('div3')">
+                        div3
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- native  -->
+            <my-component @click="handler">dd</my-component>
+            <my-component @click.native="handler">ds</my-component>
+            <!-- key 장식자 -->
+            <input @keydown.13="handler">
+            <input @keydown.enter="handler">
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

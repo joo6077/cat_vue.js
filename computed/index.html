@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="app">
+            <!-- computed는 함수로 선언하지만 {{사용가능}} -->
+            <p>{{width}} 절반은 {{halfWidth}}입니다.</p>
+            <!-- 산출데이터 조합가능 -->
+            <p>X: {{halfPoint.x}}</p>
+            <p>Y: {{halfPoint.y}}</p>
+            <!-- 입력양식 바인딩 getter setter -->
+            <input v-model.number="width">{{width}}
+            <input v-model.number="halfWidth2">{{halfWidth2}}
+            <!-- computed method 차이 -->
+            <ol>
+                <li>{{computedData}}</li>
+                <li>{{computedData}}</li>
+            </ol>
+            <ol>
+                <li>{{methodsData()}}</li>
+                <li>{{methodsData()}}</li>
+            </ol>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

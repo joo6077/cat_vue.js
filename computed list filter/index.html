@@ -1,0 +1,24 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="app">
+            <input v-model.number="budget">원 이하 필터하기
+            <input v-model.number="limit">개의 결과 출력하기
+            <p>{{matched.length}}개 중에 {{limit.length}}개를 출력하고 있습니다.</p>
+            <ul>
+                <li v-for="(item, index) in limited" :key="item.id">
+                    {{item.name}} {{item.price}}원
+                </li>
+            </ul>
+            <button @click="order=!order">변경하기</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.19/lodash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

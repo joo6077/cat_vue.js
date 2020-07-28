@@ -1,0 +1,24 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="app">
+            <input v-focus>
+            <div v-example>
+            </div>
+            <!-- 비디오 예제 -->
+            <button @click="video1=true">재생</button>
+            <button @click="video1=false">중지</button>
+            <video src="movie1.mp4" v-video="video1"></video>
+            <button @click="video2=true">재생</button>
+            <button @click="video2=false">중지</button>
+            <video src="movie2.mp4" v-video="video2"></video>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

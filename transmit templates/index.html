@@ -24,6 +24,14 @@
             </ul>
             <!-- 자식에서 부모로 -->
             <com-child2 @childs-event="parentsMethod"></com-child2>
+            <ul>
+                <com-child3
+                    v-for="(item, index) in list" 
+                    :key="item.id"
+                    v-bind="item"
+                    @attack="handleAttack"
+                ></com-child3>
+            </ul>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="main.js"></script>

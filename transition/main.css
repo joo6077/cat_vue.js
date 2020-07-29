@@ -1,0 +1,30 @@
+.demo-enter-active, .demo-leave-active{
+    transition: opacity 1s, transform 1s;
+}
+
+.demo-enter{
+    opacity: 0;
+    transform: translateX(-10px);
+}
+/*  이미 초기값이 1임 생략 가능! */
+/* .demo-enter-to{
+    opacity: 1;
+}
+.demo-leave{
+    opacity: 1;
+} */
+.demo-leave-to{
+    opacity: 0;
+    transform: translateY(10px);
+}
+.some-enter-active, .some-leave-active{
+    transition: opacity 1s;
+}
+
+.some-leave-active{
+    position: absolute;
+}
+
+.some-enter, .some-leave-to{
+    opacity: 0;
+}

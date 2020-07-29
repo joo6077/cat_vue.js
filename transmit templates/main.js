@@ -31,6 +31,30 @@ Vue.component('com-child2', {
     }
 })
 
+Vue.component('com-child3',{
+    template: `
+    <li>{{name}} HP.{{hp}}
+        <button @click="doAttack">공격하기</button>
+    </li>`,
+    props: {id:Number, name:String, hp:Number},
+    methods:{
+        doAttack: function(){
+            this.$emit('attack', this.id)
+        }
+    }
+})
+
+var bus = new Vue({
+    data: {
+        count: 0
+    }
+})
+
+
+
+
+
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -44,6 +68,14 @@ var app = new Vue({
     methods:{
         parentsMethod: function(){
             alert('이벤트를 받았습니다!')
+        },
+        handleAttack: function(id){
+            console.log(id)
+            var item = this.list.find(function(el){
+                console.log(el)
+                return el.id === id
+            })
+            if(item !== undefined && item.hp > 0) item.hp -= 10
         }
     }
 })

@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js App</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="app">
+            <!-- props 전달 -->
+            <!-- <com-child val="자식A"></com-child>
+            <com-child val="자식B"></com-child> -->
+            <!-- bind -->
+            <com-child :val="message" id="parent" class="parent"></com-child>
+            <!-- list 일 때 -->
+            <ul>
+                <com-child1 
+                    v-for="(item, index) in list" 
+                    :key="item.id"
+                    :name="item.name"
+                    :hp="item.hp"
+                >
+                </com-child1>
+            </ul>
+            <!-- 자식에서 부모로 -->
+            <com-child2 @childs-event="parentsMethod"></com-child2>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

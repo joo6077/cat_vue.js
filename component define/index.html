@@ -7,10 +7,7 @@
     </head>
     <body>
         <div id="app">
-            <button @click="list.push(list.length+1)">추가</button>
-            <ul ref="list">
-                <li v-for="(item, index) in list">{{item}}</li>
-            </ul>
+            <my-component></my-component>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="main.js"></script>
